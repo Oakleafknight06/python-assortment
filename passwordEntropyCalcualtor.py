@@ -4,11 +4,11 @@ import math
 print("Password entropy, or randomness, can only truly be calculated by evaluating the randomness of the password generation method, not by analyzing the password itself.")
 
 # Alphabet selection
-print("The alphabet refers to the set of characters or words with which you assemble the password.")
+print("\n****** Alphabet Selection *****\n\nThe alphabet refers to the set of characters or words with which you assemble the password.")
 # characters, or wordlist?
 is_wordlist = input("Are you using a wordlist (ie making a passphrases)? (y/N): ")
 if is_wordlist == ("Y" or "y"):
-    wordlist_len = int(input("Enter the length of your wordlist: "))
+    wordlist_len = int(input("\nEnter the length of your wordlist: "))
     alphabet = wordlist_len
 else:
     print("\nOkay, starting alphabet selection process.\nSelect what you would like to include in your alphabet.")
@@ -38,11 +38,11 @@ else:
     else:
         print("Not including special characters")
 
-    print(f"Your alphabet has {ab_len} characters")
+    print(f"\nYour alphabet has {ab_len} characters")
     alphabet = ab_len
 
 # Letters
-letters = int(input("Enter the number of selections from the alphabet (words for a passphrase, or characters in a password): "))
+letters = int(input("\nEnter the number of selections from the alphabet (words for a passphrase, or characters in a password): "))
 
 # Calculations
 combination = alphabet ** letters
