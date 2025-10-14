@@ -5,7 +5,7 @@ def calc_entropy(alphabet, selections):
     entropy = math.log2(combination)
     return entropy
 
-def create_alphabet(lowercase, uppercase, numbers, special, custom):
+def create_alphabet(lowercase = False, uppercase = False, numbers = False, special = False, custom = []):
     # TODO: First four variables are boolean, last is a list and is optional. If arguments are not supplied, it is assumed false.
     # TODO: Also return a list of the characters in the alphabet, rather than just the length
 
