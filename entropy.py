@@ -41,12 +41,16 @@ def create_alphabet(lowercase = False, uppercase = False, numbers = False, speci
 
     return ab_len, alphabet
 
-def passphrase(wordlist, dice_list):
+def passphrase(wordlist, num_words, separation_char = "-" dice = False):
     print("unfinished")
-    # eg 7776 long list and/or text file, [1, 3, 4, 6, 6, 2]
-    # Get wordlist file
-    # Ask for number of words from user
-    # Ask if user wants to roll dice or use system randomness
-    # Pick words from wordlist, repeat for as many words needed
-    # Return passphrase
+    for i in num_words:
+        # Get wordlist file
+        if dice == True:
+            # Ask the user for input from their dice
+        else:
+            # Generate random numbers
+        
+        # Pick word from wordlist, assign it to next_word
+        user_passphrase = user_passphrase + separation_char + next_word
+    return user_passphrase
 
