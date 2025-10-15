@@ -9,8 +9,7 @@ def calc_entropy(alphabet_len, selections):
 
 def create_alphabet(lowercase = False, uppercase = False, numbers = False, special = False, custom = None):
     """Boolean arguments: lowercase, uppercase, numbers, special. Also accepts a dictionary 'custom' for any other characters.
-       If arguments are not supplied, they are assumed false/empty.
-    """
+       If arguments are not supplied, they are assumed false/empty. """
 
     # Define variables
     ab_len = 0
@@ -18,26 +17,18 @@ def create_alphabet(lowercase = False, uppercase = False, numbers = False, speci
 
     # Processing
     if lowercase == True:
-        ab_len += 26
         alphabet = alphabet | set(string.ascii_lowercase)
-
     if uppercase == True:
-        ab_len += 26
         alphabet = alphabet | set(string.ascii_uppercase)
-
     if numbers == True:
-        ab_len += 10
         alphabet = alphabet | set(string.digits)
-
     if special == True:
-        ab_len += 32
         alphabet = alphabet | set(string.punctuation)
-
     if custom: # TODO If custom is a set or list, otherwise error
-        ab_len += len(custom)
         alphabet = alphabet | set(custom)
         # TODO Make sure the mutable object does not persist between function calls.
 
+    ab_len = len(alphabet)
     return ab_len, alphabet
 
 def passphrase(wordlist, num_words, separation_char = "-", dice = False):
