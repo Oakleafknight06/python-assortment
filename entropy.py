@@ -15,7 +15,6 @@ def create_alphabet(lowercase = False, uppercase = False, numbers = False, speci
     # Define variables
     ab_len = 0
     alphabet = set()
-    special_charset = {"!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "`", "~", ",", ".", "/", ";", "'", "[", "]" "\\", "<", ">", "?", ":", "\"", "{", "}", "|"}
 
     # Processing
     if lowercase == True:
@@ -32,7 +31,7 @@ def create_alphabet(lowercase = False, uppercase = False, numbers = False, speci
 
     if special == True:
         ab_len += 32
-        alphabet = alphabet | special_charset
+        alphabet = alphabet | set(string.punctuation)
 
     if custom: # TODO If custom is a set or list, otherwise error
         ab_len += len(custom)
@@ -41,14 +40,16 @@ def create_alphabet(lowercase = False, uppercase = False, numbers = False, speci
 
     return ab_len, alphabet
 
-def passphrase(wordlist, num_words, separation_char = "-" dice = False):
+def passphrase(wordlist, num_words, separation_char = "-", dice = False):
     print("unfinished")
     for i in num_words:
         # Get wordlist file
         if dice == True:
             # Ask the user for input from their dice
+            print("oops, not implemented")
         else:
             # Generate random numbers
+            print("oops, not implemented")
         
         # Pick word from wordlist, assign it to next_word
         user_passphrase = user_passphrase + separation_char + next_word
