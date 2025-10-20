@@ -33,6 +33,7 @@ def create_alphabet(lowercase = False, uppercase = False, numbers = False, speci
 
 def passphrase(wordlist, num_words, separation_char = "-", dice = False):
     print("unfinished")
+    user_list = []
     for i in num_words:
         # Get wordlist file
         if dice == True:
@@ -43,6 +44,7 @@ def passphrase(wordlist, num_words, separation_char = "-", dice = False):
             print("oops, not implemented")
         
         # Pick word from wordlist, assign it to next_word
-        user_passphrase = user_passphrase + separation_char + next_word
+        user_list.append(next_word)
+    user_passphrase = separation_char.join(user_list)
     return user_passphrase
 
