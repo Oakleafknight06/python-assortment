@@ -1,11 +1,17 @@
 import math
 import string
 
-def calc_entropy(alphabet_len, selections):
+def calc_entropy_old(alphabet_len, selections):
     """ Takes an integer 'alphabet_len' and an integer 'selections', and returns the number of possible combinations, and the entropy"""
     combination = pow(alphabet_len, selections)
     entropy = math.log2(combination)
     return combination, entropy
+
+def calc_comb(alphabet_len: int, selections: int) -> int:
+    return pow(alphabet_len, selections)
+
+def calc_entropy(combinations: int) -> int:
+    return math.log2(combinations)
 
 def create_alphabet(lowercase = False, uppercase = False, numbers = False, special = False):
     """Boolean arguments: lowercase, uppercase, numbers, special. If arguments are not supplied, they are assumed False. """
@@ -26,11 +32,23 @@ def create_alphabet(lowercase = False, uppercase = False, numbers = False, speci
 
     return alphabet
 
-def passphrase(wordlist, num_words, separation_char = "-", dice = False):
+## TODO
+
+def dict_check(passphrase: str) -> str:
+    """check passphrase against wordlists, return warning if common/vulnerable."""
+    # Also is dictionary check, etc
+    # breach list check
+    # dict check
+    ...
+
+def pattern_analzye(passphrase: str) -> str:
+    """Attempt to pattern analyze user provided (not program-generated) passphrase and print guesses. For example, figure out if is a passphrase, search wordlists and guess which one was used, attempt to guess entropy. Basically a password cracker, need to look into how those work. Also, detect years, pet names, place names, English words in non passphrase passwords, etc."""
+
+def gen_passphrase(wordlist, num_words, separation_char = "-", dice = False):
     user_list = []
     prog_list = []
     with open(wordlist) as wordfile:
-    print(prog_list)
+        print(prog_list)
 
     for i in range(num_words):
         # Get wordlist file. Open file based on path provided by user? Or offer options/include only own file..
@@ -47,4 +65,5 @@ def passphrase(wordlist, num_words, separation_char = "-", dice = False):
     return user_passphrase
 
 if __name__ == "__main__":
-    passphrase("orchard-street-medium.txt", 4)
+    # Check password entropy against NIST guidelines in main. Check if is lower, and warn. If above, say is good based on NIST minimum
+    pass
