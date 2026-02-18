@@ -1,12 +1,6 @@
 import math
 import string
 
-def calc_entropy_old(alphabet_len, selections):
-    """ Takes an integer 'alphabet_len' and an integer 'selections', and returns the number of possible combinations, and the entropy"""
-    combination = pow(alphabet_len, selections)
-    entropy = math.log2(combination)
-    return combination, entropy
-
 def calc_comb(alphabet_len: int, selections: int) -> int:
     return pow(alphabet_len, selections)
 
@@ -66,4 +60,6 @@ def gen_passphrase(wordlist, num_words, separation_char = "-", dice = False):
 
 if __name__ == "__main__":
     # Check password entropy against NIST guidelines in main. Check if is lower, and warn. If above, say is good based on NIST minimum
+    # https://pages.nist.gov/800-63-4/sp800-63b.html#password
+    # Minimum of 15 characters
     pass
